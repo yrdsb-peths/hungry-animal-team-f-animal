@@ -20,6 +20,7 @@ public class MyWorld extends World
         
         //create an apple
         createApple();
+        prepare();
     }
     
     /**
@@ -31,5 +32,23 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(apple, x, y);
+        
+    }
+    
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Label label = new Label("Hungry Elephant", 80);
+        addObject(label,300,100);
+
+        Label label2 = new Label("click space to play!", 50);
+        addObject(label2,300,200);
+        
+        Label label3 = new Label("Use the arrow keys to move!", 38);
+        addObject(label3,300,300);
+        
     }
 }
