@@ -10,7 +10,7 @@ Game Features
 
 How To Play
 - Press <space> to Start 
-- Use \u2190 and \u2192 to move elephant!!!
+- Use <-- and --> to move elephant!!!
 - Catch as many falliing foods as possible to increase your score
 - As the score increase, the spped of falling foods get faster
 - The game ends when you miss x times of falling food
