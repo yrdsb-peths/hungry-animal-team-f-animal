@@ -14,6 +14,9 @@ public class Apple extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        // Apple falls downward
+        int x = getX();
+        int y = getY() + 2;
+        setLocation(x, y);
     }
 }
