@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     Label scoreBoard;
+    int score = 0;
     
     public MyWorld()
     {    
@@ -54,5 +55,11 @@ public class MyWorld extends World
         
         Label label3 = new Label("Use the arrow keys to move!", 38);
         addObject(label3,300,300);
+    }
+    
+    public updateScoreboard(int point)
+    {
+        score += point;
+        scoreBoard.setValue(score);
     }
 }
