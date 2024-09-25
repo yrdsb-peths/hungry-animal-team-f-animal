@@ -57,7 +57,7 @@ public class MyWorld extends World
         addObject(label3,300,300);
     }
     
-    public updateScoreboard(int point)
+    public void updateScoreboard(int point)
     {
         score += point;
         scoreBoard.setValue(score);

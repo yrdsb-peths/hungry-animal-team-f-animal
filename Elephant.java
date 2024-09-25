@@ -50,14 +50,15 @@ public class Elephant extends Actor
         updateSprite(sprite);
     }
     
-    
     public void collideFood() {
+        MyWorld world = (MyWorld) getWorld();
+        
         List<Food> foods = getIntersectingObjects(Food.class);
         for (Food f : foods) {
             getWorld().removeObject(f);
+            world.updateScoreboard(1);
         }
     }
-    
     
     public void updateSprite(GreenfootImage[][] newSprite) {
         // Ternary operator, shorthand for if/else
