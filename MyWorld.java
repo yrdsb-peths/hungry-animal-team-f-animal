@@ -1,40 +1,43 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class MyWorld extends World
 {
 
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    public int score = 0;
+    Label scoreLabel;
+    int level = 1;
+    
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-        prepare();
+        super(600, 400, 1);
+        elephant elephant = new elephant();
+        addObject(elephant, 300, 200);
+        
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 50, 50);
+        createApple();
+        
     }
     
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
-        Label label = new Label("Hungry Elephant", 80);
-        addObject(label,300,100);
-
-        Label label2 = new Label("click space to play!", 50);
-        addObject(label2,300,200);
-        
-        Label label3 = new Label("Use the arrow keys to move!", 38);
-        addObject(label3,300,300);
-
-        
+    public void gameOver(){
+       Label gameOverLabel = new Label("Game Over", 100);
+       addObject(gameOverLabel, 300, 200);
+    }
+    
+    public void increaseScore(){
+        score++;
+        scoreLabel.setValue(score);
+        if(score%5 == 0){
+            level += 1;
+        }
+    }
+    
+    public void createApple(){
+        Apple apple = new Apple();
+        apple.setSpeed(level);
+        int x = Greenfoot.getRandomNumber(600);
+        addObject(apple, x, 0);
     }
 }
+
