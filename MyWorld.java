@@ -12,11 +12,27 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(600, 400, 1, false); 
+        
+        //create an apple
+        createApple();
         
         Elephant elephant = new Elephant();
         addObject(elephant, 300, 400 - 64);
+
         prepare();
+    }
+    
+    /**
+     * create an apple at a ramdom location at top of the screen
+     */
+    public void createApple()
+    {
+        Apple apple = new Apple();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(apple, x, y);
+        
     }
     
     /**
@@ -33,7 +49,6 @@ public class MyWorld extends World
         
         Label label3 = new Label("Use the arrow keys to move!", 38);
         addObject(label3,300,300);
-
         
     }
 }
