@@ -8,11 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    Label scoreBoard;
+    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false); 
+        
+        //create score label
+        scoreBoard = new Label(0,80);
+        addObject(scoreBoard, 50, 50);
         
         //create an apple
         createApple();
@@ -49,6 +54,5 @@ public class MyWorld extends World
         
         Label label3 = new Label("Use the arrow keys to move!", 38);
         addObject(label3,300,300);
-        
     }
 }
