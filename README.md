@@ -1,23 +1,21 @@
-Hungry Elephant
+# Hungry Elephant
 
-Project Description
+## Project Description
+Hungry Elephant is a game developed using Greenfoot. In this game, players control a hungry elephant, trying to eat as many foods as possible.
 
-Hungry Elephant is a game developed using greenfoot. In this game, players control a hungry elephant trying to eat as many foods as possible.
+## Game Features
+- A hungry elephant
+- Multiple kinds of food
+- Lives system
+- Score system
+## How To Play
+- Press the Space bar to Start 
+- Use the Left and Right arrow keys to move the elephant
+- Catch as many falling foods as possible
+- As score increases, food falls faster
+- The game ends when you miss 3 pieces of food
 
-Game Features
-- Hungry Elephant: 
-- Food: 
-- Score Tracker: 
-
-How To Play
-- Press <space> to Start 
-- Use <-- and --> to move elephant!!!
-- Catch as many falliing foods as possible to increase your score
-- As the score increase, the spped of falling foods get faster
-- The game ends when you miss x times of falling food
-
-Acknowledgments
-
-This project is based on Mr.Chan's Hungry Animal tutorial. Thank You Mr.Chan provided the resources and support.
+## Acknowledgments
+This project is based on Mr. Chan's Hungry Animal tutorial. Thank you Mr. Chan for providing the resources and support!
 
 
