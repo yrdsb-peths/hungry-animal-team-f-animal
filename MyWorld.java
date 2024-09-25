@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    //initilize variables
     Label scoreBoard;
     int score = 0;
     int level = 1;
@@ -25,8 +26,6 @@ public class MyWorld extends World
         
         Elephant elephant = new Elephant();
         addObject(elephant, 300, 400 - 64);
-
-        prepare();
     }
     
     /**
@@ -42,21 +41,8 @@ public class MyWorld extends World
     }
     
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * update the score board
      */
-    private void prepare()
-    {
-        Label label = new Label("Hungry Elephant", 80);
-        addObject(label,300,100);
-
-        Label label2 = new Label("click space to play!", 50);
-        addObject(label2,300,200);
-        
-        Label label3 = new Label("Use the arrow keys to move!", 38);
-        addObject(label3,300,300);
-    }
-    
     public void updateScoreboard(int point)
     {
         score += point;

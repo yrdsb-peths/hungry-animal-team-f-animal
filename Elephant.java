@@ -37,15 +37,17 @@ public class Elephant extends Actor
     {
         GreenfootImage[][] sprite = idleSprites;
         int movement = 0;
-        if (Greenfoot.isKeyDown("left"))
-            movement--;
-        if (Greenfoot.isKeyDown("right"))
-            movement++;
+        
+        if (Greenfoot.isKeyDown("left")) movement--;
+            
+        if (Greenfoot.isKeyDown("right")) movement++;
+            
         if (movement != 0) {
             sprite = walkSprites;
             isLeft = (movement == -1);
             setLocation(getX() + speed * movement, getY());
         }
+        
         collideFood();
         updateSprite(sprite);
     }
@@ -54,6 +56,7 @@ public class Elephant extends Actor
         MyWorld world = (MyWorld) getWorld();
         
         List<Food> foods = getIntersectingObjects(Food.class);
+        
         for (Food f : foods) {
             getWorld().removeObject(f);
             world.updateScoreboard(1);
@@ -64,7 +67,9 @@ public class Elephant extends Actor
     public void updateSprite(GreenfootImage[][] newSprite) {
         // Ternary operator, shorthand for if/else
         int leftIndex = (isLeft) ? 1 : 0;
-        if (newSprite != currentSprite) {
+        
+        if (newSprite != currentSprite) 
+        {
             currentSprite = newSprite;
             spriteIndex = 0;
         } else
