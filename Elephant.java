@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 public class Elephant extends Actor
 {
@@ -45,18 +46,18 @@ public class Elephant extends Actor
             isLeft = (movement == -1);
             setLocation(getX() + speed * movement, getY());
         }
-        //collideFood();
+        collideFood();
         updateSprite(sprite);
     }
     
-    /*
+    
     public void collideFood() {
-        List<Food> food getIntersectingObjects(Food.class);
-        for (Food f : food) {
-            // Handle food here, probably using polymorphism
+        List<Food> foods = getIntersectingObjects(Food.class);
+        for (Food f : foods) {
+            getWorld().removeObject(f);
         }
     }
-    */
+    
     
     public void updateSprite(GreenfootImage[][] newSprite) {
         // Ternary operator, shorthand for if/else

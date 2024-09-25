@@ -6,12 +6,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Apple extends Actor
+public class Apple extends Food
 {
     /**
      * Act - do whatever the Apple wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public Apple() {
+        super(1);
+    }
+    
     public void act()
     {
         // Apple falls downward
