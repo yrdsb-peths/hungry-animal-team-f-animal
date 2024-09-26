@@ -9,10 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Apple extends Food
 {
     int speed  = 1;
-    /**
-     * Act - do whatever the Apple wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     public Apple() {
         super(1);
     }
@@ -29,6 +26,7 @@ public class Apple extends Food
         if(getY() >= world.getHeight())
         {
             world.removeObject(this);
+            world.gameOver();
         }
     }
     
