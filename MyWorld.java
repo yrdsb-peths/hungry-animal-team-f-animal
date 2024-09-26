@@ -68,7 +68,7 @@ public class MyWorld extends World
             removeObject(lifeActors[i]);
         }
         if (lives <= 0) {
-            world.gameOver();
+            gameOver();
         }
     }
     
