@@ -12,6 +12,7 @@ public class MyWorld extends World
     Label scoreBoard;
     int score = 0;
     int level = 1;
+    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -52,5 +53,14 @@ public class MyWorld extends World
         {
             level += 1;
         }
+    }
+    
+    /**
+     * gameover screen
+     */
+    public void gameOver()
+    {
+        Label gameOver = new Label("GameOver", 100);
+        addObject(gameOver, 300, 200);
     }
 }
