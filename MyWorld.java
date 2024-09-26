@@ -14,6 +14,7 @@ public class MyWorld extends World
     int level = 1;
     int lives = 3;
     Life[] lifeActors = new Life[lives];
+
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -67,7 +68,16 @@ public class MyWorld extends World
             removeObject(lifeActors[i]);
         }
         if (lives <= 0) {
-            // Game over
+            world.gameOver();
         }
+    }
+    
+    /**
+     * gameover screen
+     */
+    public void gameOver()
+    {
+        Label gameOver = new Label("GameOver", 100);
+        addObject(gameOver, 300, 200);
     }
 }
