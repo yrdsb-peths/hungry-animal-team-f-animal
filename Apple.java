@@ -22,7 +22,7 @@ public class Apple extends Food
     }
     
     public void onDrop(MyWorld world) {
-        world.loseLife(1);
         world.createApple();
+        world.loseLife(1);
     }
 }

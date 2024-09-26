@@ -67,7 +67,7 @@ public class MyWorld extends World
         for (int i = lifeActors.length - 1; i >= Math.max(0, this.lives); i--) {
             removeObject(lifeActors[i]);
         }
-        if (lives <= 0) {
+        if (this.lives <= 0) {
             gameOver();
         }
     }
@@ -77,6 +77,7 @@ public class MyWorld extends World
      */
     public void gameOver()
     {
+        removeObjects(getObjects(Food.class));
         Label gameOver = new Label("GameOver", 100);
         addObject(gameOver, 300, 200);
     }
