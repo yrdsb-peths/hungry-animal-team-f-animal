@@ -8,31 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Apple extends Food
 {
-    int speed  = 1;
     /**
      * Act - do whatever the Apple wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Apple() {
-        super(1);
+    public Apple(int level) {
+        super(1, level);
     }
     
     public void act()
     {
-        // Apple falls downward
-        int x = getX();
-        int y = getY() + speed;
-        setLocation(x, y);
-        
-        // Remove apple and draw game over when apple gets to bottom
-        MyWorld world = (MyWorld) getWorld();
-        if(getY() >= world.getHeight())
-        {
-            world.removeObject(this);
-        }
+        drop();
     }
     
-    public void setspeed (int spd){
-        speed = spd;        
+    public void onDrop(MyWorld world) {
+        world.loseLife(1);
+        world.createApple();
     }
 }

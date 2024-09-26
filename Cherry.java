@@ -2,13 +2,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Cherry extends Food
 {
-    public void act()
-    {
-        // Add your action code here.
-        setLocation(getX(), getY() + 4);
+    public Cherry(){
+        super(10, 4);
     }
     
-    public Cherry(){
-        super(10);
+    public void act()
+    {
+        drop();
+    }
+    
+    public void onDrop(MyWorld world) {
+        // Restart cherry timer
     }
 }

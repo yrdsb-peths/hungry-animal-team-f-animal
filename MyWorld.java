@@ -12,6 +12,8 @@ public class MyWorld extends World
     Label scoreBoard;
     int score = 0;
     int level = 1;
+    int lives = 3;
+    Life[] lifeActors = new Life[lives];
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -21,20 +23,28 @@ public class MyWorld extends World
         scoreBoard = new Label(0,80);
         addObject(scoreBoard, 50, 50);
         
+        //create life icons
+        for (int i = 0; i < lifeActors.length; i++) {
+            Life icon = new Life();
+            addObject(icon, 600 - 25 - 150 + (50 * (i + 1)), 25);
+            lifeActors[i] = icon;
+        }
+        
         //create an apple
         createApple();
         
         Elephant elephant = new Elephant();
         addObject(elephant, 300, 400 - 64);
+        
+        setPaintOrder(Label.class, Life.class, Elephant.class, Food.class);
     }
     
     /**
-     * create an apple at a ramdom location at top of the screen
+     * create an apple at a random location at top of the screen
      */
     public void createApple()
     {
-        Apple apple = new Apple();
-        apple.setspeed(level);
+        Apple apple = new Apple(level);
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(apple, x, y);
@@ -48,9 +58,16 @@ public class MyWorld extends World
         score += point;
         scoreBoard.setValue(score);
         
-        if (score % 5 == 0)
-        {
-            level += 1;
+        level = (score / 5) + 1;
+    }
+    
+    public void loseLife(int lives) {
+        this.lives -= lives;
+        for (int i = lifeActors.length - 1; i >= Math.max(0, this.lives); i--) {
+            removeObject(lifeActors[i]);
+        }
+        if (lives <= 0) {
+            // Game over
         }
     }
 }
