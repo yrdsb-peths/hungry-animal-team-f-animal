@@ -59,7 +59,7 @@ public class Elephant extends Actor
         
         for (Food f : foods) {
             getWorld().removeObject(f);
-            world.updateScoreboard(1);
+            world.updateScoreboard(f.getValue());
             world.createApple();
         }
     }
