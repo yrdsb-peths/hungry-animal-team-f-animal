@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class MyWorld here.
@@ -89,8 +90,9 @@ public class MyWorld extends World
      */
     public void gameOver()
     {
-        // Remove all foods
-        removeObjects(getObjects(Food.class));
+        List<GameOverable> objs = getObjects(GameOverable.class);
+        for (GameOverable g : objs)
+            g.onGameOver();
         Label gameOver = new Label("GameOver", 100);
         addObject(gameOver, 300, 200);
     }

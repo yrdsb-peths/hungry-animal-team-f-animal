@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public abstract class Food extends Actor
+public abstract class Food extends Actor implements GameOverable
 {
     private int value;
     public int speed;
@@ -41,5 +41,9 @@ public abstract class Food extends Actor
         int x = getX();
         int y = getY() + speed;
         setLocation(x, y);
+    }
+    
+    public void onGameOver() {
+        getWorld().removeObject(this);
     }
 }
