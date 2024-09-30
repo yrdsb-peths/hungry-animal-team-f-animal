@@ -3,15 +3,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Cherry extends Food
 {
     public Cherry(){
-        super(10, 4);
+        super(10, 2);
     }
+    //slows down the apple
     
-    public void act()
+    public void move()
     {
-        drop();
+        
     }
     
-    public void onDrop(MyWorld world) {
-        // Restart cherry timer
-    }
 }

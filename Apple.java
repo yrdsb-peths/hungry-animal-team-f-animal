@@ -12,17 +12,14 @@ public class Apple extends Food
      * Act - do whatever the Apple wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Apple(int level) {
-        super(1, level);
+    public Apple() {
+        super(1, 1);
     }
     
-    public void act()
+    public void move()
     {
-        drop();
+        
     }
     
-    public void onDrop(MyWorld world) {
-        world.loseLife(1);
-        world.createApple();
-    }
+    
 }

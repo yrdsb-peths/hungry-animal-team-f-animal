@@ -45,7 +45,7 @@ public class Elephant extends Actor
         if (movement != 0) {
             sprite = walkSprites;
             isLeft = (movement == -1);
-            setLocation(getX() + speed * movement, getY());
+            setLocation(getX() + movement, getY());
         }
         
         collideFood();
@@ -57,10 +57,11 @@ public class Elephant extends Actor
         
         List<Food> foods = getIntersectingObjects(Food.class);
         
-        for (Food f : foods) {
+        for (Food f : foods)
+        {
             getWorld().removeObject(f);
             world.updateScoreboard(f.getValue());
-            world.createApple();
+            world.createFood();
         }
     }
     

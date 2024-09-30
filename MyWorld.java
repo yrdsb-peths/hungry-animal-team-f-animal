@@ -31,8 +31,8 @@ public class MyWorld extends World
             lifeActors[i] = icon;
         }
         
-        //create an apple
-        createApple();
+        //create food
+        createFood();
         
         Elephant elephant = new Elephant();
         addObject(elephant, 300, 400 - 64);
@@ -41,14 +41,21 @@ public class MyWorld extends World
     }
     
     /**
-     * create an apple at a random location at top of the screen
+     * create food at a random location at top of the screen
      */
-    public void createApple()
+    public void createFood()
     {
-        Apple apple = new Apple(level);
+        int rand = Greenfoot.getRandomNumber(2);
+        Food food;
+        
+        if(rand == 0) {
+            food = new Apple();
+        } else {
+            food = new Cherry();
+        }
+        
         int x = Greenfoot.getRandomNumber(600);
-        int y = 0;
-        addObject(apple, x, y);
+        addObject(food, x, 0);
     }
     
     /**
@@ -64,10 +71,13 @@ public class MyWorld extends World
     
     public void loseLife(int lives) {
         this.lives -= lives;
-        for (int i = lifeActors.length - 1; i >= Math.max(0, this.lives); i--) {
+        
+        for (int i = lifeActors.length - 1; i >= Math.max(0, this.lives); i--) 
+        {
             removeObject(lifeActors[i]);
         }
-        if (lives <= 0) {
+        
+        if (this.lives <= 0) {
             gameOver();
         }
     }
