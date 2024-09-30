@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
-public class Elephant extends Actor
+public class Elephant extends Actor implements GameOverable
 {
     //setting speeds and increase amounts 
     int speed = 6;
@@ -77,7 +77,6 @@ public class Elephant extends Actor
         }
     }
     
-    
     public void updateSprite(GreenfootImage[][] newSprite) {
         // Ternary operator, shorthand for if/else
         int leftIndex = (isLeft) ? 1 : 0;
@@ -89,5 +88,9 @@ public class Elephant extends Actor
         } else
             spriteIndex = (spriteIndex + spriteSpeed) % currentSprite[leftIndex].length;
         setImage(currentSprite[leftIndex][(int) spriteIndex]);
+    }
+    
+    public void onGameOver() {
+        getWorld().removeObject(this);
     }
 }
