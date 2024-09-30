@@ -23,10 +23,21 @@ public abstract class Food extends Actor
             onDrop(world);
         }
     }
+
+    public void onDrop(MyWorld world) {
+        world.createFood();
+        world.loseLife(1);
+    }
+    
+    public void act()
+    {
+        drop();
+    }
     
     public int getValue() {
         return value;
     }
     
-    public abstract void onDrop(MyWorld world);
+    public abstract void move();
+    
 }
