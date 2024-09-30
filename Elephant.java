@@ -6,13 +6,16 @@ public class Elephant extends Actor
     //setting variables 
     int speed = 6;
     int scale = 2;
+    
     //elephant motion
     GreenfootImage[][] idleSprites = new GreenfootImage[2][8];
     GreenfootImage[][] walkSprites = new GreenfootImage[2][8];
+    
     double spriteIndex = 0;
     double spriteSpeed = 0.35;
     GreenfootImage[][] currentSprite = idleSprites;
     boolean isLeft = false;
+    
     //elephant sound
     GreenfootSound elephantSound = new GreenfootSound("elephant-trumpets-growls-6047.mp3");
     
