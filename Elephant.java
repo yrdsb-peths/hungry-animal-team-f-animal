@@ -54,7 +54,7 @@ public class Elephant extends Actor
         if (movement != 0) {
             sprite = walkSprites;
             isLeft = (movement == -1);
-            setLocation(getX() + movement, getY());
+            setLocation(getX() + movement * speed, getY());
         }
         
         collideFood();
