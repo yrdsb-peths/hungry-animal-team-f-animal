@@ -18,9 +18,14 @@ Hungry Elephant is a game developed using Greenfoot. In this game, players contr
 ## Acknowledgments
 This project is based on Mr. Chan's Hungry Animal tutorial. Thank you Mr. Chan for providing the resources and support!
 
-## abstract class: Food class
-We used an abstract class to have multiple different food items fall down giving different amount of scores making the game more fun. 
+## Abstract Class
+We created an Abstract Class, Food, to have multiple different food items fall down giving different amount of scores making the game more fun. 
 
-## polymporphism: 
+## Polymorphism:
+Polymorphism is used...
 
-## add nore later!
+## Overrides
+...
+
+## Interfaces
+We made a GameOverable interface that allows us to quickly remove objects when the GameOver event happens.
