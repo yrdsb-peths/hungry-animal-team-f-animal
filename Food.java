@@ -15,7 +15,7 @@ public abstract class Food extends Actor
         move();
         
         MyWorld world = (MyWorld) getWorld();
-        if(getY() >= world.getHeight())
+        if(getY() >= world.getHeight() - 1)
         {
             world.removeObject(this);
             onDrop(world);
