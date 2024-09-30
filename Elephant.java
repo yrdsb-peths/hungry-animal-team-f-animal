@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Elephant extends Actor
 {
-    //setting variables 
+    //setting speeds and increase amounts 
     int speed = 6;
     int scale = 2;
     
