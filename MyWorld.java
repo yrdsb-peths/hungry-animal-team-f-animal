@@ -68,7 +68,7 @@ public class MyWorld extends World
         score += point;
         scoreBoard.setValue(score);
         
-        level = (score / 5) + 1;
+        level = (score / 10) + 1;
     }
     
     public void loseLife(int lives) {
