@@ -12,7 +12,6 @@ Hungry Elephant is a game developed using Greenfoot. In this game, players contr
 - Press the Space bar to Start 
 - Use the Left and Right arrow keys to move the elephant
 - Catch as many falling foods as possible
-- As score increases, food falls faster
 - The game ends when you miss 3 pieces of food
 
 ## Acknowledgments
