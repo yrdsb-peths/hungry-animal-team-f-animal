@@ -12,13 +12,15 @@ public class MyWorld extends World
     Label scoreBoard;
     int score = 0;
     int level = 1;
+    
+    // Array of Life objects
     int lives = 3;
     Life[] lifeActors = new Life[lives];
 
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1, false); 
+        super(600, 400, 1); 
         
         //create score label
         scoreBoard = new Label(0,80);
@@ -64,6 +66,9 @@ public class MyWorld extends World
     
     public void loseLife(int lives) {
         this.lives -= lives;
+        
+        // Loop from the end to how many lives you have remaining,
+        // destroying the objects in that order
         for (int i = lifeActors.length - 1; i >= Math.max(0, this.lives); i--) {
             removeObject(lifeActors[i]);
         }
@@ -77,6 +82,7 @@ public class MyWorld extends World
      */
     public void gameOver()
     {
+        // Remove all foods
         removeObjects(getObjects(Food.class));
         Label gameOver = new Label("GameOver", 100);
         addObject(gameOver, 300, 200);

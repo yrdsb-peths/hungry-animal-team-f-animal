@@ -17,7 +17,7 @@ public abstract class Food extends Actor
         setLocation(x, y);
         
         MyWorld world = (MyWorld) getWorld();
-        if(getY() >= world.getHeight())
+        if(getY() >= world.getHeight() - 1)
         {
             world.removeObject(this);
             onDrop(world);

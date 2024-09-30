@@ -47,7 +47,7 @@ public class TitleScreen extends World
         Label label2 = new Label("click <space> to play!", 50);
         addObject(label2,300,200);
         
-        Label label3 = new Label("Use \u2190 and \u2192 to World!", 38);
+        Label label3 = new Label("Use \u2190 and \u2192 to move!", 38);
         addObject(label3,300,300);
     }
 }
