@@ -21,6 +21,7 @@ public class Apple extends Food
         drop();
     }
     
+    //if a apple droppe lose a life and create a new apple.
     public void onDrop(MyWorld world) {
         world.createApple();
         world.loseLife(1);

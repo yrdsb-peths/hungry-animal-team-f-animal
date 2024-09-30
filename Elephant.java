@@ -3,8 +3,10 @@ import java.util.List;
 
 public class Elephant extends Actor
 {
+    //setting variables 
     int speed = 6;
     int scale = 2;
+    //elephant motion
     GreenfootImage[][] idleSprites = new GreenfootImage[2][8];
     GreenfootImage[][] walkSprites = new GreenfootImage[2][8];
     double spriteIndex = 0;
@@ -12,6 +14,7 @@ public class Elephant extends Actor
     GreenfootImage[][] currentSprite = idleSprites;
     boolean isLeft = false;
     
+    //elephant images
     public Elephant() {
         for (int i = 0; i < idleSprites[0].length; i++) {
             GreenfootImage newImage = new GreenfootImage("elephant_idle/idle" + i + ".png");
@@ -21,7 +24,7 @@ public class Elephant extends Actor
             idleSprites[0][i] = newImage;
             idleSprites[1][i] = flippedImage;
         }
-        
+        //walking motion animation
         for (int i = 0; i < walkSprites[0].length; i++) {
             GreenfootImage newImage = new GreenfootImage("elephant_walk/walk" + i + ".png");
             newImage.scale(newImage.getWidth() * scale, newImage.getHeight() * scale);
@@ -33,6 +36,7 @@ public class Elephant extends Actor
         setImage(idleSprites[0][0]);
     }
     
+    //moving with arrow keys runs collideFood and animation
     public void act()
     {
         GreenfootImage[][] sprite = idleSprites;
@@ -52,6 +56,7 @@ public class Elephant extends Actor
         updateSprite(sprite);
     }
     
+    //when touching food, remove the food and create a new one from the top
     public void collideFood() {
         MyWorld world = (MyWorld) getWorld();
         
@@ -63,6 +68,7 @@ public class Elephant extends Actor
             world.createApple();
         }
     }
+    
     
     public void updateSprite(GreenfootImage[][] newSprite) {
         // Ternary operator, shorthand for if/else
