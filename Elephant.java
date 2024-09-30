@@ -13,6 +13,8 @@ public class Elephant extends Actor
     double spriteSpeed = 0.35;
     GreenfootImage[][] currentSprite = idleSprites;
     boolean isLeft = false;
+    //elephant sound
+    GreenfootSound elephantSound = new GreenfootSound("elephant-trumpets-growls-6047.mp3");
     
     //elephant images
     public Elephant() {
@@ -66,6 +68,8 @@ public class Elephant extends Actor
             getWorld().removeObject(f);
             world.updateScoreboard(f.getValue());
             world.createApple();
+            // when elephant collides with food, plays a sound.
+            elephantSound.play();
         }
     }
     
