@@ -15,9 +15,4 @@ public class Apple extends Food
     public Apple() {
         super(1, 1);
     }
-    
-    public void move()
-    {
-        
-    }
 }

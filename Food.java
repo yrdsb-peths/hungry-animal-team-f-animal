@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public abstract class Food extends Actor
 {
     private int value;
-    private int speed;
+    public int speed;
     
     public Food(int value, int speed){
         this.value = value;
@@ -12,9 +12,7 @@ public abstract class Food extends Actor
     
     public void drop() {
         // Remove food and call a function when touching the bottom
-        int x = getX();
-        int y = getY() + speed;
-        setLocation(x, y);
+        move();
         
         MyWorld world = (MyWorld) getWorld();
         if(getY() >= world.getHeight() - 1)
@@ -38,6 +36,10 @@ public abstract class Food extends Actor
         return value;
     }
     
-    public abstract void move();
-    
+    public void move()
+    {
+        int x = getX();
+        int y = getY() + speed;
+        setLocation(x, y);
+    }
 }
