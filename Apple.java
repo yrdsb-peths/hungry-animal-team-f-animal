@@ -15,7 +15,7 @@ public class Apple extends Food
     public Apple(int level) {
         super(1, level);
     }
-    
+    //call food class, then runs drop method
     public void act()
     {
         drop();
