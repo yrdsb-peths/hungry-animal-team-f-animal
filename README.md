@@ -19,12 +19,15 @@ This project is based on Mr. Chan's Hungry Animal tutorial. Thank you Mr. Chan f
 
 ## Abstract Class
 We created an Abstract Class, Food, to have multiple different food items fall down giving different amount of scores making the game more fun. 
+Creating an abstract food class allows for better organization of the different types of food, and creates a structure for the different types of food.
 
 ## Polymorphism:
-Polymorphism is used within the food class so that multiple types of food don't have to be checked for collision with the player individually. It simplifies code and makes adding new food easier. 
+Polymorphism is used with the food classes, so that collision with the player can be checked for more efficently. Polymorphism is also used when spawning new foods.  Since it is not known which type of food will be spawned, so using polymorphism will be ideal.
 
 ## Overrides
-Overrides are used in the GameOverable interface and the Food class so behaviours can be set on a class-by-class basis when needed.
+The move method is overidden for cherry. 
+Since a unique set of movement was desired for the cherry, instead of the one from the food super class.
 
 ## Interfaces
-We made a GameOverable interface that allows us to quickly remove objects when the GameOver event happens.
+We made a GameOverable interface for objects that should be removed when game is over.
+This allows us to quickly remove intended objects when the game is over. 
