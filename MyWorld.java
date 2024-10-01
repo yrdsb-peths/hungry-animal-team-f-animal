@@ -1,12 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
-/**
- * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class MyWorld extends World
 {
     //initilize variables
@@ -14,10 +8,11 @@ public class MyWorld extends World
     int score = 0;
     int level = 1;
     
-    // Array of Life objects
+    // create array of Life objects
     int lives = 3;
     Life[] lifeActors = new Life[lives];
-
+    
+    //Constructor for MyWorld class
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -37,6 +32,7 @@ public class MyWorld extends World
         //create food
         createFood();
         
+        //add elephant
         Elephant elephant = new Elephant();
         addObject(elephant, 300, 400 - 64);
         
@@ -44,7 +40,7 @@ public class MyWorld extends World
     }
     
     /**
-     * create food at a random location at top of the screen
+     * create foods at a random location at top of the screen
      */
     public void createFood()
     {
@@ -72,15 +68,21 @@ public class MyWorld extends World
         level = (score / 5) + 1;
     }
     
+    /**
+     * decrease number of lives
+     */
     public void loseLife(int lives) {
+        //decrease number of lives
         this.lives -= lives;
-        // Loop from the end to how many lives you have remaining,
-        // destroying the objects in that order
+        
+        // remove a life symbol
         for (int i = lifeActors.length - 1; i >= Math.max(0, this.lives); i--) {
             removeObject(lifeActors[i]);
         }
-
-        if (this.lives <= 0) {
+        
+        //if lives is less than equal zero call gameOVer
+        if (this.lives <= 0) 
+        {
             gameOver();
         }
     }
@@ -90,9 +92,11 @@ public class MyWorld extends World
      */
     public void gameOver()
     {
+        //remove all GameOverable objects
         List<GameOverable> objs = getObjects(GameOverable.class);
-        for (GameOverable g : objs)
-            g.onGameOver();
+        for (GameOverable g : objs) g.onGameOver();
+        
+        //add a game over label
         Label gameOver = new Label("GameOver", 100);
         addObject(gameOver, 300, 200);
     }
