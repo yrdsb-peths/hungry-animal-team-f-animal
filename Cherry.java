@@ -4,7 +4,7 @@ public class Cherry extends Food
 {
     //constructor for Cherry class
     public Cherry(){
-        super(10, 2);
+        super(5, 2);
     }
     
     //move the cherry
